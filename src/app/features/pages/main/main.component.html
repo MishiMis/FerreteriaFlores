@@ -1,18 +1,9 @@
-<div class="flex h-screen">
-    <!-- Sidebar -->
-    <div class="w-64 bg-gray-800 text-white p-4">
-      <h2 class="text-xl font-bold mb-4">Menú</h2>
-      <ul>
-        <li class="mb-2"><a routerLink="/" class="hover:text-blue-400">Inicio</a></li>
-        <li class="mb-2"><a routerLink="/main" class="hover:text-blue-400">Dashboard</a></li>
-        <li class="mt-8">
-          <button (click)="logout()" class="bg-red-500 w-full p-2 rounded">Salir</button>
-        </li>
-      </ul>
-    </div>
-  
-    <!-- Contenido principal -->
-    <div class="flex-1 bg-gray-100 flex items-center justify-center">
-s    </div>
-  </div>
-  
+<app-left-sidebar
+  [isLeftSidebarCollapsed]="isLeftSidebarCollapsed()"
+  (changeIsLeftSidebarCollapsed)="changeIsLeftSidebarCollapsed($event)"
+/>
+
+<app-index
+  [isLeftSidebarCollapsed]="isLeftSidebarCollapsed()"
+  [screenWidth]="screenWidth()"
+/>
