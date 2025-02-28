@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActionPanelComponent } from '../../../shared/components/action-panel/action-panel.component';
+import { ActionPanelComponent } from '../../../../shared/components/action-panel/action-panel.component';
 
 @Component({
   selector: 'app-products',

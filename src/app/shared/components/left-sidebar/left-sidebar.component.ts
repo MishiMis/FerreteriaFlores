@@ -27,11 +27,11 @@ export class LeftSidebarComponent {
       icon: 'fal fa-shopping-cart',
       label: 'Ventas',
     },
-    // {
-    //   routeLink: '/main/users',
-    //   icon: 'fal fa-home',
-    //   label: 'Usuarios',
-    // }
+    {
+      routeLink: '/main/users',
+      icon: 'fal fa-users',
+      label: 'Usuarios',
+    }
   ];
 
   toggleCollapse(): void {

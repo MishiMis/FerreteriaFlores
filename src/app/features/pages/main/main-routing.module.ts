@@ -3,9 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './main.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { AuthGuard } from '../../../core/guards/auth.guard';
-import { ProductsComponent } from '../products/products.component';
+import { ProductsComponent } from '../ProductsComponent/products/products.component';
 import { VentasComponent } from '../ventas/ventas.component';
-import { UsuariosComponent } from '../usuarios/usuarios.component';
+import { UsuariosComponent } from '../UsersComponent/usuarios/usuarios.component';
 
 const routes: Routes = [
   { 
