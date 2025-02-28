@@ -1,10 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, input, output } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { MatTooltip } from '@angular/material/tooltip';
+
+
 
 @Component({
   selector: 'app-left-sidebar',
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule,MatTooltip],
   templateUrl: './left-sidebar.component.html',
   styleUrl: './left-sidebar.component.css',
 })

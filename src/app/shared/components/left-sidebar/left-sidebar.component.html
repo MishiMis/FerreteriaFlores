@@ -15,16 +15,19 @@
   </div>
   <div class="sidenav-nav">
     @for (item of items; track $index) {
-      <li class="sidenav-nav-item">
+      <li class="sidenav-nav-item {{ isLeftSidebarCollapsed() ? '' : 'show expand' }}">
         <a
-          class="sidenav-nav-link"
+          class="sidenav-nav-link {{ isLeftSidebarCollapsed() ? '' : 'expand' }}"
+          matTooltip="{{ item.label }}"
+          matTooltipPosition="right"
+          [matTooltipDisabled]="!isLeftSidebarCollapsed()"
           [routerLink]="item.routeLink"
           routerLinkActive="active"
           [routerLinkActiveOptions]="{ exact: true }"
         >
           <i class="sidenav-link-icon" [class]="item.icon"></i>
           @if (!isLeftSidebarCollapsed()) {
-            <span class="sidenav-link-text">{{ item.label }}</span>
+            <span class="sidenav-link-text {{ isLeftSidebarCollapsed() ? '' : 'expand' }}">{{ item.label }}</span>
           }
         </a>
       </li>
