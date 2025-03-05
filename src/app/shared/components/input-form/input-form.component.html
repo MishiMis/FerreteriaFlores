@@ -1,0 +1,26 @@
+<div class="form-group">
+    <div class="flex">
+        <label>{{label()}}</label>
+        @if(required()){
+            <span class="text-red-500">*</span>
+        }
+    </div>
+
+    <div class="relative">
+        <input 
+            type="type()"
+                [(ngModel)]='value';
+                [placeholder]="placeholder()"
+                (blur)="onTouch()"
+                (input)="onInput()"
+                [maxLength]="maxLength()"
+                [required]="required()"
+                [readOnly]="readonly()"
+                class="w-full px-4 py-2.5 rounded-lg border border-gray-300 bg-white text-black text-sm {{inputClasses()}}">
+                @if (showError()){
+                    <div class="text-sm text-red-500 mt-1">
+                        {{errorMessage()}}
+                    </div>
+                }
+    </div>
+</div>
