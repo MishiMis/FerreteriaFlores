@@ -1,0 +1,91 @@
+<div class="max-h-[90vh] bg-white px-8 w-9/12-w-[95%] fixed -translate-x-1/2 transform top-4 rounded-xl flex flex-col">
+    <div class="flex justify-between items-center py-2 mb-1 border-b">
+        <span>Nuevo Producto</span>
+        <button mat-icon-button class="hover: bg-red-300 
+        hover:rotate-90 ease-in-out text-black duration-200 w-10 h-10 flex items-center justify-center rounded-full" (click)="close()">
+        <mat-icon>close</mat-icon>
+        </button>
+    </div>
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="w-full py-4">
+        <div class="grid grid-cols-2 gap-4">
+            <app-input-form 
+            label="Nombre"
+            formControlName = "name"
+            [required]="true"
+            placeholder="Ingrese el nombre del producto"
+            >
+
+            </app-input-form>
+
+            <app-input-form 
+            label="Descripcion"
+            formControlName = "description"
+            [required]="true"
+            placeholder="Ingrese la descripcion del producto"
+            >
+
+            </app-input-form>
+
+            <app-input-form 
+            label="Precio"
+            formControlName = "price"
+            [required]="true"
+            placeholder="Ingrese el precio del producto"
+            >
+
+            </app-input-form>
+
+            <app-input-form 
+            label="Stock"
+            formControlName = "stock"
+            [required]="true"
+            placeholder="Ingrese el stock del producto"
+            >
+
+            </app-input-form>
+
+            <app-input-form 
+            label="Stock minimo"
+            formControlName = "min_stock"
+            [required]="true"
+            placeholder="Stock minimo del producto"
+            >
+
+            </app-input-form>
+
+            <app-input-form 
+            label="Stock maximo"
+            formControlName = "max_stock"
+            [required]="true"
+            placeholder="Stock maximo del producto"
+            >
+
+            </app-input-form>
+
+            <app-input-form 
+            label="Categoria"
+            formControlName = "category_id"
+            [required]="true"
+            placeholder="Ingrese la categoria del producto"
+            >
+
+            </app-input-form>
+
+            <app-input-form 
+            label="Imagen"
+            formControlName = "image_url"
+            [required]="true"
+            placeholder="Url de la imagen del producto"
+            >
+
+            </app-input-form>
+
+            <div class="flex justify-end mt-4">
+                <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
+                    Guardar Producto
+                </button>
+            </div>
+        </div>
+
+    </form>
+</div>
