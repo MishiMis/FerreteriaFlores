@@ -31,7 +31,7 @@ export class DataService {
     createProduct(productData: any): Observable<any> {
       return this.http.post(`${this.apiUrl}/api/product`, productData);
     }
-    updateProduct(productId: number, productData: any): Observable<any> {
+    updateProduct(productId: string, productData: any): Observable<any> {
       return this.http.patch(`${this.apiUrl}/api/product/${productId}`, productData);
     }
   

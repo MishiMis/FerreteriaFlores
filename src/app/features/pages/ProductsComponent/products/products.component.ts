@@ -6,15 +6,17 @@ import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 import { DataService } from '../../../../core/services/data.service';
 import { AddProductsComponent } from '../add-products/add-products.component';
+import { EditProductsComponent } from '../edit-products/edit-products.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-products',
-  imports: [CommonModule, MatTableModule, MatPaginatorModule, MatDialogModule, ButtonComponent],
+  imports: [CommonModule, MatTableModule, MatPaginatorModule, MatDialogModule, ButtonComponent,MatIconModule],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })
 export class ProductsComponent implements OnInit {
-  displayedColumns: string[] = ['nombre','descripcion', 'precio', 'stock', 'min_stock', 'max_stock', 'categoria'];
+  displayedColumns: string[] = ['nombre','descripcion', 'precio', 'stock', 'min_stock', 'max_stock', 'categoria','acciones'];
   dataSource = new MatTableDataSource<any>([]);
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -43,4 +45,17 @@ export class ProductsComponent implements OnInit {
       this.loadProducts();
     });
   }
+    onEdit(item: any): void {
+      console.log('Data enviada al diálogo:', item);
+  
+      const dialogRef = this.dialog.open(EditProductsComponent, {
+        width: '600px',
+        data: item,
+      });
+  
+      dialogRef.afterClosed().subscribe((result) => {
+        if (result) this.loadProducts();
+  
+      });
+    }
 }
