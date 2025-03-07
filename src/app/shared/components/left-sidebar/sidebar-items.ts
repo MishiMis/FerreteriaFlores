@@ -5,6 +5,11 @@ export const sidebarItems = [
       label: 'Inicio',
     },
     {
+      routeLink: '/main/category',
+      icon: 'fal fa-boxes',
+      label: 'Categorías',
+    },
+    {
       routeLink: '/main/products',
       icon: 'fal fa-hammer',
       label: 'Productos',
