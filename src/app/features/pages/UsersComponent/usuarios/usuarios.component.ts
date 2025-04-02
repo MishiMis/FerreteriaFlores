@@ -2,10 +2,12 @@ import { Component, inject } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 import { AddUserComponent } from '../add-user/add-user.component';
+import { ButtonModule } from 'primeng/button';
+
 
 @Component({
   selector: 'app-usuarios',
-  imports: [ButtonComponent],
+  imports: [ButtonComponent, ButtonModule],
   templateUrl: './usuarios.component.html',
   styleUrl: './usuarios.component.css'
 })

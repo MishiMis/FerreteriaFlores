@@ -1,0 +1,39 @@
+<div class="fixed inset-0 flex items-center justify-center">
+    <div class="bg-white px-8 py-6 w-11/12 max-w-2xl rounded-xl shadow-lg flex flex-col border border-gray-300">
+        <div class="flex justify-between items-center pb-2 border-b border-gray-300">
+            <span class="text-xl font-semibold text-gray-800">Modulo de Trabajo</span>
+            <button mat-icon-button class="bg-[#1bd3f5] hover:bg-[#62e8fe] hover:text-white transition duration-200 w-10 h-10 flex items-center justify-center rounded-full" (click)="close()">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+        <div class="flex justify-between items-center pb-2 border-b border-gray-300">
+            <span class="text-xl font-semibold text-gray-800">{{data.name}}</span><span class="text-xl font-semibold text-gray-800">{{data.description}}</span>
+            <button mat-icon-button class="bg-[#1bd3f5] hover:bg-[#62e8fe] hover:text-white transition duration-200 w-10 h-10 flex items-center justify-center rounded-full" (click)="openModal()">
+                <mat-icon>plus</mat-icon>
+            </button>
+        </div>
+        @if (moduleData.length > 0) {
+            <div class="gap-1">
+            @for (module of moduleData; track $index) {
+                <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>{{module.nombre}}</mat-panel-title>
+                      <mat-panel-description> {{module.descripcion}} </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <p>Ubicacion de la empresa: {{module.ubication}}</p>
+                    <p>Requisitos de la empresa: {{module.required}}</p>
+                    <p>Duracion del trabajo: {{module.duration}}</p>
+                    <p>Vacantes Disponibles: {{module.vacantes}}</p>
+                  </mat-expansion-panel>
+
+            }
+        </div>
+
+
+        }
+
+    </div>
+
+
+
+</div>

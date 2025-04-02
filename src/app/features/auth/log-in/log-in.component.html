@@ -1,11 +1,10 @@
 <div class="flex h-screen">
-  <div class="w-1/2 bg-[#DA5A51] flex flex-col items-center justify-center">
-    <p class="text-white font-serif italic text-3xl">¡Hola! Nos alegra verte aquí. </p>
-    <img src="icono.png" alt="">
+  <div class="w-1/2 bg-[#75EBFF] flex flex-col items-center justify-center">
+    <img src="senati.png" width="700px" alt="">
   </div>
-  <div class="w-1/2 bg-[#10243D] flex items-center justify-center">
+  <div class="w-1/2 bg-[#D9D9D6] flex items-center justify-center">
     <form (submit)="login()" class="w-80">
-      <h2 class="text-2xl font-bold mb-6 text-center text-white">Iniciar Sesión</h2>
+      <h2 class="text-2xl font-bold mb-6 text-center text-black">Iniciar Sesión</h2>
 
       <input type="text" placeholder="Usuario" [(ngModel)]="username" name="username"
         class="w-full p-2 border-b-2 border-[#5d6a7c] outline-none bg-transparent text-[#5d6a7c] placeholder-[#5d6a7c] focus:border-white transition">
@@ -13,7 +12,7 @@
       <input type="password" placeholder="Contraseña" [(ngModel)]="password" name="password"
         class="w-full p-2 border-b-2 border-[#5d6a7c] outline-none bg-transparent text-[#5d6a7c] placeholder-[#5d6a7c] focus:border-white transition mt-4">
 
-      <button type="submit" class="w-full bg-[#DA5A51] text-white p-2 rounded mt-6 hover:bg-[#ed6861] transition">
+      <button type="submit" class="w-full bg-[#0A39E4] text-white p-2 rounded mt-6 hover:bg-[#3a77ff] transition">
         Ingresar
       </button>
     </form>

@@ -1,0 +1,59 @@
+<div class="fixed inset-0 flex items-center justify-center">
+    <div class="bg-white px-8 py-6 w-11/12 max-w-2xl rounded-xl shadow-lg flex flex-col border border-gray-300">
+        <div class="flex justify-between items-center pb-2 border-b border-gray-300">
+            <span class="text-xl font-semibold text-gray-800">Nuevo Puesto de Trabajo</span>
+            <button mat-icon-button class="bg-[#1bd3f5] hover:bg-[#62e8fe] hover:text-white transition duration-200 w-10 h-10 flex items-center justify-center rounded-full" (click)="close()">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+        <form [formGroup]="moduleForm" class="w-full py-4" (ngSubmit)="onSubmit()">
+            <div class="grid grid-cols-2 gap-4">
+                <app-input-form 
+                    label="Nombre de la Empresa"
+                    formControlName="nombre"
+                    [required]="true"
+                    placeholder="Ingresa el nombre de la empresa">
+                </app-input-form>
+                <app-input-form 
+                    label="Ubicacion de la Empresa"
+                    formControlName="location"
+                    [required]="true"
+                    placeholder="Ingrese la ubicacion de la empresa">
+                </app-input-form>
+                <app-input-form 
+                    label="Requisitos"
+                    formControlName="required"
+                    [required]="true"
+                    placeholder="Ingrese los Requisitos del puesto">
+                </app-input-form>
+                <app-input-form 
+                    label="Duracion del Puesto"
+                    formControlName="duration"
+                    [required]="true"
+                    placeholder="Ingrese la duracion del puesto">
+                </app-input-form>
+                <app-input-form 
+                    label="Descripcion del Puesto"
+                    formControlName="descripcion"
+                    [required]="true"
+                    placeholder="Ingrese la descripcion del puesto">
+                </app-input-form>
+                <app-input-form 
+                    label="Vacantes Disponibles"
+                    formControlName="vacantes"
+                    [required]="true"
+                    placeholder="Ingrese la cantidad de vacantes disponibles">
+            </app-input-form>
+            </div>
+            
+            <div class="flex justify-end mt-6 gap-2">
+                <button type="button" class="bg-[#000000] text-white px-5 py-2 rounded-lg hover:bg-[#3d3d3d] transition duration-300 shadow-md" (click)="close()">
+                    Cancelar
+                </button>
+                <button type="submit" class="bg-[#1bd3f5] text-white px-5 py-2 rounded-lg hover:bg-[#62e8fe] transition duration-300 shadow-md">
+                    Guardar Categoria
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

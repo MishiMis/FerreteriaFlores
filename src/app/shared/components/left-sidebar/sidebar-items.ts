@@ -5,19 +5,9 @@ export const sidebarItems = [
       label: 'Inicio',
     },
     {
-      routeLink: '/main/category',
-      icon: 'fal fa-boxes',
-      label: 'Categorías',
-    },
-    {
-      routeLink: '/main/products',
-      icon: 'fal fa-hammer',
-      label: 'Productos',
-    },
-    {
-      routeLink: '/main/sale',
-      icon: 'fal fa-shopping-cart',
-      label: 'Ventas',
+      routeLink: '/main/modulo',
+      icon: 'fal fa-cogs',
+      label: 'Modulo',
     },
     {
       routeLink: '/main/users',

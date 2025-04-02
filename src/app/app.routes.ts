@@ -4,10 +4,8 @@ import { LogInComponent } from './features/auth/log-in/log-in.component';
 import { MainComponent } from './features/pages/main/main.component';
 import { DashboardComponent } from './features/pages/dashboard/dashboard.component';
 import { AuthGuard } from './core/guards/auth.guard';
-import { ProductsComponent } from './features/pages/ProductsComponent/products/products.component';
-import { VentasComponent } from './features/pages/ventas/ventas.component';
 import { UsuariosComponent } from './features/pages/UsersComponent/usuarios/usuarios.component';
-import { CategoryComponent } from './features/pages/CategoryComponent/category/category.component';
+import { ModuloComponent } from './features/pages/moduloComponent/modulo/modulo.component';
 
 export const routes: Routes = [
   { path: '', component: LogInComponent, pathMatch: 'full' },
@@ -17,9 +15,7 @@ export const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       { path: 'dashboard', component: DashboardComponent },
-      { path: 'category', component: CategoryComponent },
-      { path: 'products', component: ProductsComponent },
-      { path: 'sale', component: VentasComponent },
+      { path: 'modulo', component: ModuloComponent },
       { path: 'users', component: UsuariosComponent },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' }
     ]

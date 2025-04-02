@@ -1,0 +1,44 @@
+<div class="h-[5rem] w-full bg-[#62E8FE] flex border border-white rounded-lg">
+    <div class="h-full w-[30%] flex items-center">
+        <h1 class="text-3xl ml-4 text-black">Modulos de Trabajo.</h1>
+    </div>
+    <div class="h-full w-[70%] flex items-center justify-end mr-4 gap-3">
+        <app-button [text]="'Exportar'" [icon]="'download'"></app-button>
+        <app-button [text]="'Importar'" [icon]="'upload'"></app-button>
+        <app-button [text]="'Agregar'" [icon]="'add'" (click)="openModal()"></app-button>
+    </div>
+</div>
+
+<div class="py-6">
+    @if (moduleData.length > 0) {
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            @for (module of moduleData; track $index) {
+                <mat-card class="bg-blue-100 border border-blue-300 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <mat-card-header class="bg-[#62E8FE] p-4 rounded-t-lg ">
+                        <mat-card-title class="text-black font-semibold text-lg">
+                            {{ module.name }}
+                        </mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content class="p-4">
+                        <p class="text-gray-500">
+                            {{ module.description}}
+                        </p>
+                    </mat-card-content>
+                    <mat-card-actions class="p-4 flex justify-end gap-1">
+                        <app-button matTooltip="Ver detalles" matTooltipPosition="above" [icon]="'visibility'" (click)="openDetails(module)"></app-button> 
+                        <app-button matTooltip="Editar" matTooltipPosition="above" [icon]="'edit'"></app-button>    
+                        <app-button matTooltip="Eliminar" matTooltipPosition="above" [icon]="'delete'"></app-button>    
+                        
+                    </mat-card-actions>
+                </mat-card>
+            }
+        </div>
+    } @else {
+        <div class="text-center py-12">
+            <mat-icon class="no-data-icon">block</mat-icon>
+            <p class="text-white">No hay módulos creados aún</p>
+        </div>
+    }
+</div>
+
+
